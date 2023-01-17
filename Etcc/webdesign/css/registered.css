@@ -1,0 +1,131 @@
+/* 点击锚点链接时使得页面跳转平滑 */
+html {
+  scroll-behavior: smooth;
+}
+
+/* 清除外内边距 */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* 设置body的样式 */
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "宋体";
+}
+
+/* 左盒子样式 */
+.left-box {
+  /* 设置浮动 */
+  float: left;
+  width: 60%;
+  height: 800px;
+}
+
+/* 左盒子图片样式 */
+.left-box img {
+  width: 100%;
+  height: 100%;
+}
+
+/* 右盒子样式 */
+.right-box {
+  /* 设置浮动 */
+  float: left;
+  width: 40%;
+  height: 800px;
+  background-color: rgb(255, 241, 241);
+}
+
+/* 登录表样式 */
+.dlbiao {
+  /* 给登录表加相对定位：relative */
+  position: relative;
+}
+
+/* 登录表样式里元素的样式 */
+h1,
+p,
+.zhuce,
+.anniu,
+.denglu {
+  /* 给登录表里的元素加绝对定位：absoulute */
+  position: absolute;
+}
+
+/* 因为加了绝对定位：absoulute,可以设置方位词设置元素布局 */
+h1 {
+  top: 100px;
+  left: 100px;
+  font-size: 45px;
+  font-weight: 500;
+  color: #d24735;
+}
+
+/* 表单控件 */
+.zhuce:nth-child(2) {
+  top: 180px;
+  left: 100px;
+  width: 400px;
+  height: 60px;
+  /* 设置控件的样式 */
+  border-radius: 5px;
+  border: 1px solid rgb(208, 208, 208);
+}
+
+.zhuce:nth-child(3) {
+  top: 300px;
+  left: 100px;
+  width: 400px;
+  height: 60px;
+  /* 设置控件的样式 */
+  border-radius: 5px;
+  border: 1px solid rgb(208, 208, 208);
+}
+
+.zhuce:nth-child(4) {
+  top: 420px;
+  left: 100px;
+  width: 400px;
+  height: 60px;
+  /* 设置控件的样式 */
+  border-radius: 5px;
+  border: 1px solid rgb(208, 208, 208);
+}
+
+/* 按钮 */
+.anniu {
+  top: 510px;
+  left: 100px;
+}
+
+/* 按钮后面的字体样式 */
+p {
+  top: 510px;
+  left: 115px;
+  font-size: 12px;
+  font-weight: 200;
+}
+
+/* 登录按钮的样式 */
+.denglu {
+  top: 580px;
+  left: 160px;
+  width: 260px;
+  height: 50px;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 1px solid rgb(255, 255, 255);
+  background-color: #d24735;
+  text-decoration: none;
+  box-shadow: 1px 1px 2px rgb(68, 62, 62);
+}
+
+/* 登录两字的样式 */
+.denglu h2 {
+  text-align: center;
+  line-height: 50px;
+  color: #fff;
+}
