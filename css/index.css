@@ -1,0 +1,304 @@
+/* 点击锚点链接时使得页面跳转平滑 */
+html {
+  scroll-behavior: smooth;
+}
+/* 清除内外边距 */
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* 大盒子的样式 */
+.big-box {
+  width: 100%;
+  height: 100%;
+  background-color: rgb(255, 236, 236);
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 音乐播放器 */
+audio {
+  position: fixed;
+  display: inline-block;
+  width: 150px;
+  bottom: 0px;
+  border-radius: 5px;
+}
+
+#top {
+  width: 100%;
+  height: 80px;
+}
+
+/* 标题样式 */
+header {
+  /* 使标题盒子浮动在左边 */
+  float: left;
+  width: 30%;
+  height: 80px;
+  background-color: rgb(255, 234, 211);
+}
+
+/* 标题logo样式 */
+header .logo {
+  font-size: 36px;
+  font-weight: 900;
+  color: rgb(172, 0, 0);
+  font-family: "宋体";
+  line-height: 80px;
+  text-align: center;
+}
+
+/* 导航栏样式 */
+nav {
+  /* 使导航盒子浮动在右边 */
+  float: right;
+  width: 70%;
+  height: 80px;
+}
+
+/* 导航栏每个格子的样式 */
+/* 一级菜单样式 */
+nav .DaoHang {
+  /* 用flex布局 */
+  display: flex;
+  /* 让li平分空间 */
+  justify-content: space-around;
+  list-style: none;
+  width: 100%;
+}
+
+/* li样式 */
+nav .DaoHang .daohang {
+  width: 100%;
+  height: 100%;
+}
+
+/* li里面的a标签样式 */
+nav .DaoHang .daohang a {
+  /* 将a元素切换成行内块元素 */
+  display: inline-block;
+  width: 100%;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-size: 30px;
+  font-family: "宋体";
+  color: rgb(172, 0, 0);
+  background-color: rgb(255, 234, 211);
+}
+
+/* 鼠标悬停a元素时的样式 */
+nav .DaoHang .daohang a:hover {
+  color: rgb(255, 234, 211);
+  background-color: rgb(172, 0, 0);
+  transition: 0.2s;
+}
+
+/* 二级菜单 */
+/* 二级菜单ul的样式 */
+nav .DaoHang .daohang ul {
+  /* display: none用来隐藏二级菜单 */
+  display: none;
+  position: absolute;
+  z-index: 999;
+}
+
+/* 鼠标悬停在一级菜单时，使二级菜单展示出来 */
+nav .DaoHang .daohang:hover ul {
+  display: block;
+}
+
+/* 二级菜单ul里的li的样式 */
+nav .DaoHang .daohang ul li {
+  /* 取消浮动让元素向下 */
+  float: none;
+  /* 去掉li里面的小圆点 */
+  list-style: none;
+  width: 266px;
+  height: 100%;
+}
+
+/* li里a链接的样式 */
+nav .DaoHang .daohang ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+  color: rgb(255, 234, 211);
+  background-color: rgb(172, 0, 0, 0.6);
+}
+/* 鼠标悬停时a链接的样式 */
+nav .DaoHang .daohang ul li a:hover {
+  color: rgb(172, 0, 0);
+  background-color: rgb(255, 234, 211, 0.9);
+  transition: 0.3s;
+}
+
+/* 主内容部分 */
+main {
+  position: relative;
+  width: 100%;
+  height: 4100px;
+}
+
+/* 轮播图 */
+main .lunbo {
+  width: 100%;
+  height: 1000px;
+  /* 使用背景图片的形式的轮播图 */
+  background-image: url(../images/1.png);
+  /* 设置轮播效果 */
+  animation: lbt 12s infinite;
+  background-size: 100% 100%;
+}
+
+@keyframes lbt {
+  25% {
+    background-image: url(../images/2.png);
+  }
+  50% {
+    background-image: url(../images/3.png);
+  }
+  75% {
+    background-image: url(../images/4.png);
+  }
+}
+
+/* 内容盒子的样式 */
+main .neirong {
+  width: 1000px;
+  height: 600px;
+  margin: 0 auto;
+  background-color: #fff;
+}
+/* 内容里的文字的样式 */
+main .neirong p {
+  font-size: 25px;
+  font-family: "宋体";
+  text-indent: 2em;
+  letter-spacing: 0.2em;
+  line-height: 50px;
+}
+main .neirong p strong {
+  font-size: 35px;
+  font-weight: 800;
+}
+/* 锚点盒子样式 */
+main .maodian {
+  position: sticky;
+  top: 0;
+  left: 50%;
+  margin-left: 1000px;
+  width: 80px;
+  height: 80px;
+  background-color: rgba(177, 177, 177, 0.445);
+}
+
+/* 锚点链接样式 */
+main .maodian a {
+  display: block;
+  text-align: center;
+  line-height: 80px;
+  font-size: 50px;
+  text-decoration: none;
+  color: #222;
+}
+
+/* 鼠标悬停锚点链接时样式 */
+main .maodian a:hover {
+  background-color: rgba(255, 255, 255, 0.11);
+  color: rgb(255, 129, 129);
+  border: 1px solid rgb(255, 129, 129);
+}
+
+/* 内容1盒子 */
+main .neirong-1 {
+  width: 1000px;
+  height: 2500px;
+  background-color: rgb(255, 255, 255);
+  margin: 0 auto;
+}
+/* 内容1里两个盒子的样式 */
+main .neirong-1 .box-a + .box-b {
+  width: 1000px;
+  height: 500px;
+  /*  清除多余出来的边距 */
+  overflow: hidden;
+}
+/* 盒子a的左盒子的样式 */
+main .neirong-1 .box-a .left-box {
+  float: left;
+  width: 40%;
+  height: 500px;
+  /* 用弹性布局设置水平垂直居中 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+}
+/* 盒子a的右盒子的样式 */
+main .neirong-1 .box-a .right-box {
+  float: right;
+  width: 60%;
+  height: 500px;
+  background-color: rgb(255, 255, 255);
+}
+/* 盒子a的右盒子的标题样式 */
+main .neirong-1 .box-a .right-box h1 {
+  font-size: 50px;
+  font-weight: 600;
+  font-family: "仿宋";
+  text-align: center;
+  line-height: 60px;
+}
+/* 盒子a的右盒子的段落样式 */
+main .neirong-1 .box-a .right-box p {
+  font-size: 20px;
+  text-indent: 2em;
+  line-height: 32px;
+  font-family: "仿宋";
+  font-weight: 550;
+  letter-spacing: 0.2em;
+}
+/* 盒子b里四个小盒子的样式 */
+main .neirong-1 .box-b .box-1 {
+  float: left;
+  width: 25%;
+  height: 500px;
+  background-color: rgb(255, 255, 255);
+  text-align: center;
+  font-size: 25px;
+  font-family: "仿宋";
+  font-weight: 800;
+}
+/* 盒子b里四个小盒子里图片的样式 */
+main .neirong-1 .box-b .box-1 img {
+  width: 250px;
+  height: 400px;
+}
+/* 盒子a的左盒子的图片样式 */
+main .neirong-1 .box-a .left-box img {
+  width: 380px;
+  height: 480px;
+}
+
+/* 页脚 */
+footer {
+  width: 100%;
+  height: 80px;
+  background-color: #000;
+}
+
+/* 页脚文字样式 */
+footer p {
+  color: #eee;
+  text-align: center;
+  line-height: 80px;
+  height: 80px;
+  font-size: 20px;
+  font-family: "微软雅黑";
+}
